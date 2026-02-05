@@ -7,20 +7,19 @@ function NavBar() {
   const scrollToContact=()=>{
     document.getElementById("contact")?.scrollIntoView({behavior:"smooth"})
   }
+  const scrollToSkills=()=>{
+    document.getElementById("skill")?.scrollIntoView({behavior:"smooth"})
+  }
 
   return (
     <div className="d-flex justify-content-around align-items-center px-2 pt-4 mt-4 my-name">
 
       <h1>Gowtham T</h1>
       <div className='d-flex gap-5   navbar-text'>
-         <p
-          
-          onClick={scrollToAbout}
-        >
-          About
-        </p>
+         <p onClick={scrollToAbout}> About </p>
         <p >Experience</p>
-        <p >Project</p>   
+        <p onClick={scrollToSkills}>Skills</p>  
+        <p /* onClick={scrollToProject} */>Projects</p> 
         <p onClick={scrollToContact}>Contact</p>
       </div>
     </div>

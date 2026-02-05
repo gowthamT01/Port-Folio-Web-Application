@@ -1,11 +1,14 @@
 import React from 'react'
 import about from '/src/assets/images/About.jpg'
 function About() {
+   const scrollToSkills=()=>{
+    document.getElementById("skill")?.scrollIntoView({behavior:"smooth"})
+  }
   return (
     <section id="about">
 
-    <div className='mt-5 about'>
-         <div className='text-center justify-content-center'>
+    <div className='mt-5 about-container'>
+         <div className='text-center justify-content-center mt-3 pt-3'>
             <p className=' fs-6'>Get To Know More</p>
             <h1 className='fw-bold'>About Me</h1>
          </div>
@@ -27,8 +30,14 @@ function About() {
             </div>
             
          </div>
-     
+     <div className='pt-5 ps-5 mt-5 ms-auto'>
+        <i
+          className="bi bi-chevron-double-down fs-1 cursor-pointer"
+          onClick={scrollToSkills}
+        ></i>
+      </div>
     </div>
+    
     </section>
   )
 }

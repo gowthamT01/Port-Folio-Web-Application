@@ -1,20 +1,44 @@
-import React from 'react'
+import React from "react";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
 
-// React-Bootstrap imports
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Card from 'react-bootstrap/Card'
-
-// Bootstrap Icons (react-bootstrap-icons)
-import { Envelope, Telephone, GeoAlt, Clock ,Linkedin} from 'react-bootstrap-icons'
+import { Envelope, Telephone, GeoAlt, Linkedin } from "react-bootstrap-icons";
 
 function Contact() {
+
+  const contactData = [
+    {
+      icon: <Envelope size={28} />,
+      title: "Email Address",
+      value: "gowtham05@gmail.com",
+    },
+    {
+      icon: <Telephone size={28} />,
+      title: "Phone Number",
+      value: "+91 9035232347",
+    },
+    {
+      icon: <GeoAlt size={28} />,
+      title: "Location",
+      value:
+        "Puduramapura, Hanur Taluk, Chamarajanagar, Karnataka, India - 571444",
+    },
+    {
+      icon: <Linkedin size={28} />,
+      title: "LinkedIn",
+      value: "linkedin.com/in/gowtham-t",
+      link: "https://www.linkedin.com/in/gowtham-t-2aa781327",
+    },
+  ];
+
   return (
     <section id="contact" className="contact-section">
       <Container>
+
         {/* Heading */}
-        <div className="text-center mb-5">
+        <div className="text-center mb-5 ">
           <h2 className="contact-title">Contact Me</h2>
           <p className="text-muted">
             Feel free to reach out for opportunities or collaborations.
@@ -22,42 +46,31 @@ function Contact() {
         </div>
 
         {/* Cards */}
-        <Row className="g-4 text-center">
-          <Col md={3}>
-            <Card className="contact-card p-3 shadow-sm">
-              <Envelope size={30} />
-              <h6>Email Address</h6>
-              <p>gowtham05@gmail.com</p>
-            </Card>
-          </Col>
+        <Row className="g-4 text-center mt-4">
+          {contactData.map((item, index) => (
+            <Col md={3} key={index}>
+              <Card className="contact-card glass-card p-4 h-100">
 
-          <Col md={3}>
-            <Card className="contact-card p-3 shadow-sm">
-              <Telephone size={30} />
-              <h6>Phone Number</h6>
-              <p>+91 9035232347</p>
-            </Card>
-          </Col>
+                <div className="mb-2">{item.icon}</div>
 
-          <Col md={3}>
-            <Card className="contact-card p-3 shadow-sm">
-              <GeoAlt size={30} />
-              <h6>Location</h6>
-              <p>Puduramapura,Hanur Thaluk,Chamarajanagar Dist,Karnataka,India.571444</p>
-            </Card>
-          </Col>
+                <h6 className="fw-bold">{item.title}</h6>
 
-          <Col md={3}>
-            <Card className="contact-card p-3 shadow-sm">
-              <Linkedin size={30} />
-              <h6>Linkedin</h6>
-              <p>Mon – Fri : 9AM – 6PM</p>
-            </Card>
-          </Col>
+                {item.link ? (
+                  <a href={item.link} target="_blank" rel="noreferrer">
+                    {item.value}
+                  </a>
+                ) : (
+                  <p className="mb-0">{item.value}</p>
+                )}
+
+              </Card>
+            </Col>
+          ))}
         </Row>
+
       </Container>
     </section>
-  )
+  );
 }
 
-export default Contact
+export default Contact;

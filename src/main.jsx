@@ -6,6 +6,7 @@ import App from './App.jsx'
 import Home from './Home'
 import About from './About'
 import Contact from './Contact'
+import TechnicalSkills from './TechnicalSkills.jsx'
 const router=createBrowserRouter([
   {
     path:'/',
@@ -19,6 +20,9 @@ const router=createBrowserRouter([
   },{
     path:'/Contact',
     element:<Contact/>
+  },{
+    path:'./TechnicalSkills',
+    element:<TechnicalSkills/>
   }
 ])
 createRoot(document.getElementById('root')).render(
