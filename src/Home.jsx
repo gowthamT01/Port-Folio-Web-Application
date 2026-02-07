@@ -5,6 +5,7 @@ import NavBar from './NavBar'
 import About from './About'
 import TechnicalSkills from './TechnicalSkills'
 import Contact from './Contact'
+import Project from './Project'
 
 function Home() {
   const [count, setCount] = useState(0)
@@ -17,6 +18,7 @@ function Home() {
      <Profile/>
      <About/>
      <TechnicalSkills/>
+     <Project/>
      <Contact/>
      </div>
     </>

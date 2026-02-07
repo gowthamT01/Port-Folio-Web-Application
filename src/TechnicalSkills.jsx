@@ -16,7 +16,7 @@ function Tech() {
     },
     {
       title: "Backend Technologies",
-      items: ["Node JS","Express Js"],
+      items: ["Node JS","Express Js","REST API"],
     },
     {
       title: "Data Base",
@@ -27,8 +27,8 @@ function Tech() {
       items: ["Visual Studio Code","GIT","GIT HUB","MS Word","MS Excel"],
     },
     {
-      title: "Memory & Retrieval",
-      items: ["Pinecone", "ChromaDB", "RAG", "Vector Databases"],
+      title: "Networking",
+      items: ["LAN","WAN","MAN",],
     },
   ];
 

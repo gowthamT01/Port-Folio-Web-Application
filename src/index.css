@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(270deg, #216adf, #e6eaec, #049beb, #fcfcfd);
+  background: linear-gradient(270deg, #f8f9fa,#fdfdfd,#84bbf2, #fbfcfd, #f4f5f6, #44d0f4);
   background-size: 11000% 800%;
   animation: ultraSmooth 25s ease infinite;
 }
@@ -11,9 +11,7 @@ body {
   75% { background-position: 50% 50%; }
   100% { background-position: 0% 50%; }
 }
-/* Curser */
 
-/* Cursor Glow */
 .cursor-glow {
   position: fixed;
   width: 420px;
@@ -188,4 +186,31 @@ body {
 /* Icon Glow */
 .glass-card svg {
   color: #040c0e;
+}
+
+
+.glass-container {
+  background: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  border-radius: 20px;
+
+  /* Height Constraints */
+  max-height: 85vh; 
+  overflow-y: auto; /* Adds scrollbar inside the card if content is too tall */
+  
+  /* Optional: Custom scrollbar for better "glass" look */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,0,0,0.2) transparent;
+}
+
+/* Hide scrollbar for Chrome/Safari */
+.glass-container::-webkit-scrollbar {
+  width: 6px;
+}
+.glass-container::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.1);
+  border-radius: 10px;
 }
