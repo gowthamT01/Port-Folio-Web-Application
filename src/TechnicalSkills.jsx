@@ -1,9 +1,10 @@
 import React from "react";
 import { Container, Row, Col, Card, Badge } from "react-bootstrap";
 
+
 function Tech() {
    const scrollTocontact=()=>{
-    document.getElementById("contact")?.scrollIntoView({behavior:"smooth"})
+    document.getElementById("project")?.scrollIntoView({behavior:"smooth"})
   }
   const techData = [
     {

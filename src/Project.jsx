@@ -1,15 +1,19 @@
 import React from 'react';
 import { Container, Row, Col, Button, Image } from 'react-bootstrap';
 
-// 1. Corrected the data structure (removed the extra object wrapper)
+import trendynet1 from '/src/assets/project-img/Trendynet-1.png'
+import trendynet2 from '/src/assets/project-img/Trendynet-2.png'
+import ReadyToGo1 from '/src/assets/project-img/ReadyToGo1.png'
+import ReadyToGo2 from '/src/assets/project-img/ReadyToGo2.png'
+
 const projectData = [
   {
     sectionTitle: "Projects",
     subTitle: "Browse My Recent",
     projectName: "TrendyNet E-Commerce Website",
     images: [
-      { src: "/src/assets/project-img/Trendynet-1.png", label: "Index Page" },
-      { src: "/src/assets/project-img/Trendynet-1.png", label: "Collection Page" }
+      { src: trendynet1, label: "Index Page" },
+      { src:trendynet2, label: "Collection Page" }
     ],
     links: {
       github: "https://github.com/gowthamT01/trendynet-repo/tree/main/TrendyNet",
@@ -34,8 +38,8 @@ const projectData = [
     subTitle: "Browse My Recent",
     projectName: "ReadyToGo Travel Consultancy Website",
     images: [
-      { src: "src/assets/project-img/ReadyToGo (1).png", label: "Index Page" },
-      { src: "src/assets/project-img/ReadyToGo (2).png", label: "Collection Page" }
+      { src:ReadyToGo1, label: "Index Page" },
+      { src: ReadyToGo2, label: "Collection Page" }
     ],
     links: {
       github: "https://github.com/gowthamT01/READY-TO-GO",
@@ -47,6 +51,8 @@ const projectData = [
 
 const ProjectComponent = () => {
   return (
+    <section id="project">
+
     <Container className="py-5">
     
       <div className="text-center mb-5">
@@ -100,6 +106,7 @@ const ProjectComponent = () => {
         </div>
       ))}
     </Container>
+    </section>
   );
 };
 
