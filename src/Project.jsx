@@ -5,6 +5,10 @@ import trendynet1 from '/src/assets/project-img/Trendynet-1.png'
 import trendynet2 from '/src/assets/project-img/Trendynet-2.png'
 import ReadyToGo1 from '/src/assets/project-img/ReadyToGo1.png'
 import ReadyToGo2 from '/src/assets/project-img/ReadyToGo2.png'
+import Udemy1 from '/src/assets/project-img/Udemy-2.png'
+import Udemy2 from '/src/assets/project-img/Udemy-2.png'
+import Fraud1 from '/src/assets/project-img/Fraud1.jpeg'
+import Fraud2 from '/src/assets/project-img/Fraud2.jpeg'
 
 const projectData = [
   {
@@ -23,14 +27,14 @@ const projectData = [
    {
     sectionTitle: "Projects",
     subTitle: "Browse My Recent",
-    projectName: "TrendyNet E-Commerce Website",
+    projectName: "Udemy Clone Website",
     images: [
-      { src: "/src/assets/project-img/Trendynet-1.png", label: "Index Page" },
-      { src: "/src/assets/project-img/Trendynet-1.png", label: "Collection Page" }
+      { src: Udemy1, label: "Index Page" },
+      { src: Udemy2, label: "Courses" }
     ],
     links: {
-      github: "https://github.com/gowthamT01/trendynet-repo/tree/main/TrendyNet",
-      liveDemo: "https://trendynet.netlify.app/collection"
+      github: "https://github.com/gowthamT01/UDEMY-DEMO",
+      liveDemo: "https://udemy-clone-gt.netlify.app/"
     }
   },
    {
@@ -45,7 +49,21 @@ const projectData = [
       github: "https://github.com/gowthamT01/READY-TO-GO",
       liveDemo: "https://ready-to-go-travel.netlify.app/"
     }
+  },
+  {
+    sectionTitle: "Projects",
+    subTitle: "Browse My Recent",
+    projectName: "Fraudalent Job Post Identification",
+    images: [
+      { src:Fraud1, label: "Index Page" },
+      { src: Fraud2, label: "Collection Page" }
+    ],
+    links: {
+      github: "https://github.com/gowthamT01/FraudalentJobPostIdentificarion",
+      liveDemo: "https://github.com/gowthamT01/FraudalentJobPostIdentificarion"
+    }
   }
+  
 
 ];
 
@@ -100,10 +118,12 @@ const ProjectComponent = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Live Demo
+              Live 
             </Button>
           </div>
+          
         </div>
+   
       ))}
     </Container>
     </section>

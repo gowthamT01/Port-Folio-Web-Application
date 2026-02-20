@@ -1,77 +1,87 @@
-import React, { useState, useEffect } from 'react'
-import img from '/src/assets/images/profile.jpeg'
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import img from '/src/assets/images/profile.jpeg';
+import { ReactTyped } from "react-typed";
 
 function Profile() {
-
-  const navigate = useNavigate(); // FIX
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    setShow(true); // trigger animation
+    setShow(true);
   }, []);
+
+  const scrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   const scrollToAbout = () => {
     document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
   };
-const scrollToContact=()=>{
-    document.getElementById("contact")?.scrollIntoView({behavior:"smooth"})
-  }
+
   return (
-    <section id='home'>
-
-    <div className="container mt-3">
-
-      <div className={`d-flex justify-content-center align-items-center gap-5 pt-5 mt-5 hero-section ${show ? "show" : ""}`}>
-
-        <div >
+    <section id='home' className="profile-container pt-1 mt-0">
+      <div className={`hero-wrapper ${show ? "fade-in" : ""}`}>
+        
+        {/* Image Section */}
+        <div className="profile-img-box">
           <img
             src={img}
-            className="profile-img rounded-circle"
-            alt="profile"
+            className="profile-avatar shadow-lg"
+            alt="Gowtham T"
           />
         </div>
 
-        <div className="text-center profile-text">
-          <h6 className="text-muted">Hello, I'm</h6>
-          <h1 className="fw-bold">
-            <span className='text-primary'>Gowtham</span> T
-          </h1>
-          <h4 className="">Full Stack Developer</h4>
+        {/* Text Section */}
+        <div className="profile-info">
+          <p className="greeting-text">Hello, I'm</p>
+        <h1 className="main-name gradient-text">
+  <span className="highlight typing-wrapper ">
+    <ReactTyped
+      strings={["Gowtham T"]}
+      typeSpeed={200}
+      backSpeed={10}
+      loop
+    />
+  </span>{" "}
+  
+</h1>
+          <h3 className="role-text">Full Stack Developer</h3>
 
-          <div className="d-flex gap-3 justify-content-center mt-3">
-            <button className="btn btn-outline-dark px-4 profile-button">
-              Download CV
-            </button>
-
-            <button className="btn btn-dark px-4 profile-button" onClick={scrollToContact}>
+          {/* Action Buttons */}
+          <div className="btn-group-custom">
+          <a 
+  href="https://drive.google.com/file/d/1RAKqMCqreBFMcyYrbXkca6PtD7Tr2Jmc/view?usp=sharing"
+  target="_blank"
+  rel="noreferrer"
+   style={{ textDecoration: "none" }}
+  className="btn-outline-custom"
+>
+  Download CV
+</a>
+  
+  
+            <button className="btn-dark-custom" onClick={scrollToContact}>
               Contact Info
             </button>
           </div>
 
-          <div className="d-flex gap-4 justify-content-center mt-4">
-            <a href="https://www.linkedin.com/in/gowtham-t-2aa781327" target="_blank" rel="noreferrer">
-              <i className="bi bi-linkedin fs-2 text-dark"></i>
+          {/* Socials */}
+          <div className="social-icons">
+            <a href="https://linkedin.com/in/gowtham-t-2aa781327" target="_blank" rel="noreferrer">
+              <i className="bi bi-linkedin"></i>
             </a>
-
             <a href="https://github.com/gowthamT01" target="_blank" rel="noreferrer">
-              <i className="bi bi-github fs-2 text-dark"></i>
+              <i className="bi bi-github"></i>
             </a>
           </div>
         </div>
-
       </div>
 
-
-    </div>
-      <div className='pt-5  ps-5'>
-        <i
-          className="bi bi-chevron-double-down fs-1 cursor-pointer"
-          onClick={scrollToAbout}
-        ></i>
+      {/* Bounce Arrow */}
+      <div className="scroll-down justify-content-left" onClick={scrollToAbout}>
+        <i className="bi bi-chevron-double-down"></i>
       </div>
     </section>
-  )
+  );
 }
 
-export default Profile
+export default Profile;

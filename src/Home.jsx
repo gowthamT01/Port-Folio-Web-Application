@@ -7,6 +7,7 @@ import TechnicalSkills from './TechnicalSkills'
 import Contact from './Contact'
 import Project from './Project'
 
+
 function Home() {
   const [count, setCount] = useState(0)
 
@@ -20,6 +21,7 @@ function Home() {
      <TechnicalSkills/>
      <Project/>
      <Contact/>
+    
      </div>
     </>
   )

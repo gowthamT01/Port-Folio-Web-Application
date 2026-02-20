@@ -69,8 +69,22 @@ body {
     
     border: 3px solid black;
 }
+.gradient-text {
+  font-size: 40px;
+  font-weight: bold;
 
+  background: linear-gradient(45deg, #27badc, #09080b);
 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+  color: transparent;
+}
+.typing-wrapper {
+  display: inline-block;
+  min-width: 180px; /* adjust based on name length */
+}
 .profile-text h1 {
   font-size: 3rem;
 }
@@ -213,4 +227,542 @@ body {
 .glass-container::-webkit-scrollbar-thumb {
   background: rgba(0,0,0,0.1);
   border-radius: 10px;
+}
+
+
+/* Footer */
+.footer-transparent {
+  background: transparent;
+}
+
+.footer-text {
+  color: #555;
+}
+
+.footer-link {
+  color: #555;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #0d6efd;
+}
+
+.social-icon {
+  color: #555;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-icon:hover {
+  color: #0d6efd;
+  transform: scale(1.2);
+}
+
+/* NAVBAR ======= */
+/* General Styling */
+.navbar-container {
+  width: 100%;
+  background: transparent;
+  padding: 20px 0;
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links p {
+  cursor: pointer;
+  margin: 0;
+  font-weight: 500;
+}
+
+.menu-icon {
+  display: none; /* Hidden on desktop */
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Responsive Media Query */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block; /* Show menu icon */
+  }
+
+  .nav-links {
+    display: none; /* Hide links by default on mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95); /* Semi-transparent white to keep text readable */
+    padding: 20px;
+    gap: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    display: flex; /* Show links when "isMenuOpen" is true */
+  }
+}
+
+
+
+
+/* Media query */
+/* Entrance Animation Logic */
+.hero-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.9s ease-out;
+}
+
+.hero-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Default Image Size */
+.profile-img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border: 8px solid #f8f9fa;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* --- MEDIA QUERIES --- */
+
+/* Tablets and below (max 768px) */
+@media (max-width: 768px) {
+  .hero-section {
+    margin-top: 2rem !important;
+    gap: 2rem !important;
+  }
+
+  .profile-img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .profile-text h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Mobile Phones (max 480px) */
+@media (max-width: 480px) {
+  .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  /* Stacking buttons on very small screens */
+  .profile-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .profile-button {
+    width: 100%;
+  }
+
+  .scroll-indicator {
+    padding-left: 0 !important; /* Center the arrow on mobile */
+  }
+}
+
+
+/* --- Base Styles & Animation --- */
+.profile-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+  padding: 20px;
+}
+
+.hero-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.profile-img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border: 10px solid #ffffff;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.02);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+}
+
+/* Simple bounce animation for the arrow */
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-10px);}
+  60% {transform: translateY(-5px);}
+}
+
+/* --- MEDIA QUERIES --- */
+.profile-wrapper {
+  padding: 60px 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.profile-content {
+  max-width: 500px; /* Prevents empty space on large screens */
+}
+
+/* Image Blob Effect */
+.image-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; /* Organic blob shape */
+  position: relative;
+  z-index: 2;
+}
+
+.blob-bg {
+  position: absolute;
+  top: -10px;
+  left: -5px;
+  width: 210px;
+  height: 210px;
+  background-color: #eef2ff; /* Light blue tint for the blob shadow */
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Typography */
+.status-badge {
+  color: #3b82f6;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.name-blue {
+  color: #3b52ff;
+}
+
+.description-text {
+  max-width: 400px;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Socials */
+.social-icon i {
+  transition: opacity 0.2s;
+}
+.social-icon i:hover {
+  opacity: 0.7;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Base styles for the animation */
+.hero-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.hero-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Container Setup */
+.profile-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent !important;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hero Wrapper Alignment */
+.hero-wrapper {
+  display: flex;
+  flex-direction: column; /* Stack vertically on mobile */
+  align-items: center;
+  gap: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease-out;
+}
+
+.hero-wrapper.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Profile Image */
+.profile-avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+}
+
+/* Text Styling */
+.profile-info {
+  text-align: center;
+}
+
+.greeting-text {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.main-name {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.highlight {
+  color: #007bff; /* Primary Blue */
+}
+
+.role-text {
+  font-size: 1.8rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* Button Group */
+.btn-group-custom {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.btn-outline-custom, .btn-dark-custom {
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+  cursor: pointer;
+  border: 2px solid #333;
+}
+
+.btn-outline-custom {
+  background: transparent;
+  color: #333;
+}
+
+.btn-outline-custom:hover {
+  background: #333;
+  color: #fff;
+}
+
+.btn-dark-custom {
+  background: #333;
+  color: #fff;
+}
+
+.btn-dark-custom:hover {
+  background: #000;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  font-size: 2rem;
+}
+
+.social-icons a {
+  color: #333;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+  transform: translateY(-3px);
+}
+
+/* Bounce Arrow */
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  font-size: 2rem;
+  cursor: pointer;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-10px);}
+  60% {transform: translateY(-5px);}
+}
+
+/* --- MEDIA QUERIES --- */
+
+/* Tablet and Desktop (Side by Side) */
+@media (min-width: 768px) {
+  .hero-wrapper {
+    flex-direction: row; /* Horizontal on large screens */
+    text-align: left;
+    gap: 4rem;
+  }
+
+  .profile-info {
+    text-align: left;
+  }
+
+  .profile-avatar {
+    width: 350px;
+    height: 350px;
+  }
+
+  .main-name {
+    font-size: 4rem;
+  }
+
+  .btn-group-custom, .social-icons {
+    justify-content: flex-start;
+  }
+}
+
+/* Extra Large Screens */
+@media (min-width: 1200px) {
+  .profile-avatar {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .main-name {
+    font-size: 2.2rem;
+  }
+  .role-text {
+    font-size: 1.4rem;
+  }
+  .profile-avatar {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+
+/* ABOUT MEDIA=========== */
+/* Ensure the image doesn't overflow its container */
+.about-img {
+  width: 100%;
+  max-width: 350px; /* Limits size on desktop */
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+}
+
+.icon-btn {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  color: #333;
+}
+
+.icon-btn:hover {
+  transform: scale(1.2);
+  color: #007bff; /* Primary color highlight */
+}
+
+/* Media Queries for fine-tuning */
+
+/* For Mobile Devices (Small screens) */
+@media (max-width: 768px) {
+  .about-details {
+    padding: 0 15px;
+    text-align: center !important; /* Center text on mobile for better looks */
+  }
+  
+  .about-img {
+    max-width: 250px; /* Slightly smaller image on mobile */
+  }
+
+  .detail-item h4 {
+    font-size: 1.1rem; /* Shrink text slightly so it doesn't wrap awkwardly */
+  }
+}
+
+/* For Extra Small screens */
+@media (max-width: 480px) {
+  .about-container {
+    margin-top: 2rem !important;
+  }
+  
+  .fs-1 {
+    font-size: 2rem !important; /* Scale down the arrows */
+  }
 }

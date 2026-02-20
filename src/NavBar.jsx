@@ -1,29 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react';
+
 
 function NavBar() {
-  const scrollToAbout=()=>{
-    document.getElementById("about")?.scrollIntoView({behavior:"smooth"})
-  }
-  const scrollToContact=()=>{
-    document.getElementById("contact")?.scrollIntoView({behavior:"smooth"})
-  }
-  const scrollToSkills=()=>{
-    document.getElementById("skill")?.scrollIntoView({behavior:"smooth"})
-  }
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setIsMenuOpen(false); // Close menu after clicking on mobile
+  };
 
   return (
-    <div className="d-flex justify-content-around align-items-center px-2 pt-4 mt-4 my-name">
+    <nav className="navbar-container pt-3 mt-5">
+      <div className="navbar-content">
+        <h1 className="my-name ">Gowtham T</h1>
 
-      <h1>Gowtham T</h1>
-      <div className='d-flex gap-5   navbar-text'>
-         <p onClick={scrollToAbout}> About </p>
-        <p >Experience</p>
-        <p onClick={scrollToSkills}>Skills</p>  
-        <p /* onClick={scrollToProject} */>Projects</p> 
-        <p onClick={scrollToContact}>Contact</p>
+        {/* Hamburger Icon - Only visible on small screens */}
+        <div className="menu-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          {isMenuOpen ? '✕' : '☰'}
+        </div>
+
+        {/* Links Menu */}
+        <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+          <p className='fs-5' onClick={() => scrollToSection("about")}>About</p>
+        
+          <p className='fs-5' onClick={() => scrollToSection("skill")}>Skills</p>
+          <p className='fs-5' onClick={() => scrollToSection("project")}>Projects</p>
+          <p className='fs-5' onClick={() => scrollToSection("contact")}>Contact</p>
+        </div>
       </div>
-    </div>
-  )
+    </nav>
+  );
 }
 
-export default NavBar
+export default NavBar;
