@@ -21,11 +21,11 @@ function NavBar() {
 
         {/* Links Menu */}
         <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-          <p className='fs-5' onClick={() => scrollToSection("about")}>About</p>
+          <p className='fs-5 nav-link-custom' onClick={() => scrollToSection("about")}>About</p>
         
-          <p className='fs-5' onClick={() => scrollToSection("skill")}>Skills</p>
-          <p className='fs-5' onClick={() => scrollToSection("project")}>Projects</p>
-          <p className='fs-5' onClick={() => scrollToSection("contact")}>Contact</p>
+          <p className='fs-5 nav-link-custom' onClick={() => scrollToSection("skill")}>Skills</p>
+          <p className='fs-5 nav-link-custom' onClick={() => scrollToSection("project")}>Projects</p>
+          <p className='fs-5 nav-link-custom' onClick={() => scrollToSection("contact")}>Contact</p>
         </div>
       </div>
     </nav>

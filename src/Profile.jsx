@@ -18,7 +18,7 @@ function Profile() {
   };
 
   return (
-    <section id='home' className="profile-container pt-1 mt-0">
+    <section id='home' className="profile-container ">
       <div className={`hero-wrapper ${show ? "fade-in" : ""}`}>
         
         {/* Image Section */}
@@ -31,10 +31,10 @@ function Profile() {
         </div>
 
         {/* Text Section */}
-        <div className="profile-info">
+        <div className="profile-info justify-content-center">
           <p className="greeting-text">Hello, I'm</p>
         <h1 className="main-name gradient-text">
-  <span className="highlight typing-wrapper ">
+  <span className="highlight typing-wrapper ts-4">
     <ReactTyped
       strings={["Gowtham T"]}
       typeSpeed={200}
@@ -77,7 +77,7 @@ function Profile() {
       </div>
 
       {/* Bounce Arrow */}
-      <div className="scroll-down justify-content-left" onClick={scrollToAbout}>
+      <div className="scroll-down justify-content-left MT-5" onClick={scrollToAbout}>
         <i className="bi bi-chevron-double-down"></i>
       </div>
     </section>

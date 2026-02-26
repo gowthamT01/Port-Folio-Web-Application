@@ -21,7 +21,7 @@ const projectData = [
     ],
     links: {
       github: "https://github.com/gowthamT01/trendynet-repo/tree/main/TrendyNet",
-      liveDemo: "https://trendynet.netlify.app/collection"
+      liveDemo: "https://trendynet.netlify.app/"
     }
   },
    {

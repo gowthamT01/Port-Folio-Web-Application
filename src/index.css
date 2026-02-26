@@ -49,6 +49,31 @@ body {
 .my-name{
     color: black;
 }
+.nav-link-custom {
+  position: relative;
+  font-weight: 500;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.nav-link-custom::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  transition: width 0.3s ease;
+}
+
+.nav-link-custom:hover::after {
+  width: 100%;
+}
+
+.nav-link-custom:hover {
+  color: #0072ff;
+}
 .navbar-text{
     color: rgb(23, 22, 22);
     font-size: larger;
@@ -73,7 +98,7 @@ body {
   font-size: 40px;
   font-weight: bold;
 
-  background: linear-gradient(45deg, #27badc, #09080b);
+  background: linear-gradient(45deg, #1b5fe7, #09080b);
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -533,14 +558,16 @@ body {
 }
 /* Container Setup */
 .profile-container {
-  min-height: 100vh;
+  min-height: 70vh;
+  
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   background: transparent !important;
   padding: 20px;
   position: relative;
+ 
   overflow: hidden;
 }
 
@@ -582,7 +609,7 @@ body {
 
 .main-name {
   font-size: 3rem;
-  font-weight: 800;
+  font-weight: 900;
   margin: 0;
 }
 
@@ -686,7 +713,7 @@ body {
   }
 
   .main-name {
-    font-size: 4rem;
+    font-size: 3.3rem;
   }
 
   .btn-group-custom, .social-icons {
